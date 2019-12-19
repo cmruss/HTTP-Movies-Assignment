@@ -9,11 +9,10 @@ const initialState = {
     stars: []
 }
 
-const UpdateMovie = props => {
+const AddMovie = props => {
     const [movie, setMovie] = useState(initialState);
-    const [star, setStar] = useState([]);
     console.log(props);
-
+    const [star, setStar] = useState([]);
  
     useEffect(() => {    
         const movieToEdit = props.movies.find(
@@ -52,7 +51,7 @@ const UpdateMovie = props => {
     const handleSubmit = e => {
         e.preventDefault();
         axios
-            .put(`http://localhost:5000/api/movies/${movie.id}`, movie)
+            .post(`http://localhost:5000/api/movies`, movie)
             .then(res => {
                 props.updateMovies(...props.movies,res.data);
                 props.history.push(`/`);
@@ -93,7 +92,7 @@ const UpdateMovie = props => {
                             value={movie.metascore}
                         />
                     </div>
-                    <input 
+                        <input 
                             type="text"
                             name="star"
                             placeholder="star"
@@ -104,7 +103,7 @@ const UpdateMovie = props => {
                         <button onClick={addStar} >add</button>
                         <p>{movie.stars.join(", ")}</p>
                      <div className="save-button" onClick={handleSubmit}>
-                       Update
+                       Add
                      </div>
                 </form>
             </div>
@@ -113,4 +112,4 @@ const UpdateMovie = props => {
 
 }
 
-export default UpdateMovie;
+export default AddMovie;
