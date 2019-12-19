@@ -58,10 +58,10 @@ export default class Movie extends React.Component {
         <div className="save-button" onClick={this.saveMovie}>
           Save
         </div>
-        <div className="save-button" onClick={ e =>this.routeToUpdate(e, this.state.movie)}>
+        <div className="edit-button" onClick={ e =>this.routeToUpdate(e, this.state.movie)}>
           Edit
         </div>
-        <div className="save-button" onClick={()=>this.deleteMovie(this.state.movie.id)}>
+        <div className="delete-button" onClick={()=>this.deleteMovie(this.state.movie.id)}>
           Delete
         </div>
       </div>

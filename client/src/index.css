@@ -65,7 +65,31 @@ body {
   background-color: green;
   color: white;
 }
+.edit-button {
+  position: absolute;
+  top: 42.5%;
+  right: 25px;
+  border: 1px solid grey;
+  padding: 5px 10px;
+  background-color: palegoldenrod;
+}
+.edit-button:hover {
+  background-color: goldenrod;
+  color: white;
+}
 
+.delete-button {
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  border: 1px solid grey;
+  padding: 5px 10px;
+  background-color: palevioletred;
+}
+.delete-button:hover {
+  background-color:firebrick;
+  color: white;
+}
 .home-button {
   padding: 5px 10px;
   background-color: lightskyblue;
